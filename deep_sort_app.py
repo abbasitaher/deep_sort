@@ -177,7 +177,6 @@ def run(sequence_dir, detection_file, output_file, min_confidence,
         indices = preprocessing.non_max_suppression(
             boxes, nms_max_overlap, scores)
         detections = [detections[i] for i in indices]
-
         # Update tracker.
         tracker.predict()
         tracker.update(detections)
